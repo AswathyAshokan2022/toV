@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calcdone</title>
+    <style>
+        .container{
+            
+            background-color: rgb(65, 64, 64);
+            width: 460px;
+            height: 540px;
+            margin: auto;
+            border-radius: 10px;
+        }
+        #screen{
+           
+            height: 80px;
+            width: 400px;
+            margin: 25px;
+            font-size: 4rem;
+            text-align: right;
+
+        }
+        .button{
+            width: 90px;
+            height: 75px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 25px;
+
+        }
+        .button:hover{
+            border: 5px solid greenyellow;
+        }
+
+        
+    </style>
+</head>
+<body> 
+    <div class="container">
+    <form action="">
+        <input class="scrn" id="screen"><br>
+        <input class="button number" type="button" value="7" onclick="btnClick(value)">
+        <input class="button number" type="button" value="8" onclick="btnClick(value)">
+        <input class="button number" type="button" value="9" onclick="btnClick(value)">
+        <input class="button operation" type="button" value="/" onclick="btnClick(value)"><br>
+
+        <input class="button number" type="button" value="4" onclick="btnClick(value)">
+        <input class="button number" type="button" value="5" onclick="btnClick(value)">
+        <input class="button number" type="button" value="6" onclick="btnClick(value)">
+        <input class="button operation" type="button" value="-" onclick="btnClick(value)"><br>
+
+        <input class="button number" type="button" value="1" onclick="btnClick(value)">
+        <input class="button number" type="button" value="2" onclick="btnClick(value)">
+        <input class="button number" type="button" value="3" onclick="btnClick(value)">
+        <input class="button operation" type="button" value="*" onclick="btnClick(value)"><br>
+
+        <input class="button clear" type="button" value="C" onclick="clearScreen()">
+        <input class="button operation" type="button" value="0" onclick="btnClick(value)">
+        <input class="button operation" type="button" value="+" onclick="btnClick(value)">
+        <input class="button operation" type="button" value="=" onclick="findResult(value)"><br>
+    </form>
+</div>
+<script>
+var screen = document.getElementById('screen');
+function btnClick(value){
+    screen.value += value;
+}
+function clearScreen(){
+    screen.value = "";
+}
+function findResult(){
+    var result = eval(screen.value)
+    screen.value = result
+}
+
+
+</script>
+    
+</body>
+</html>
